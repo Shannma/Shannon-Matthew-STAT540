@@ -58,13 +58,13 @@ data.frame(Titanic)
 
 To determine the quantity of children and adults on board the Titanic, the following function was used to specifically show the survival rates of children and adults:
 
-``` r
+``` {r}
 apply(Titanic, c(3,4), sum)
 ```
 
 From this, the total number of children and adults on the Titanic is shown separated by those who survived and those who did not. In order to calculate the total number of children and the total number of adults, the number of children who survived must be added to the number of children who did not survive:
 
-``` r
+``` {r}
 x <- 52
 y <- 57
 z <- x + y
@@ -76,7 +76,7 @@ From this analysis, we can see that z = 109. *Therefore, there were a total of *
 
 To find the total number of adults, the same methods will be applied:
 
-``` r
+``` {r}
 x <- 1428
 y <- 654
 z <- x + y
@@ -90,7 +90,9 @@ z = 2092. *Therefore, there were **2092 adults** on board the Titanic*.
 
 To determine if there were more female adult or male adult passengers on the Titanic the following line of code was run:
 
-`r  apply(Titanic, c(2,3), sum)`
+``` {r}  
+apply(Titanic, c(2,3), sum)
+```
 
 From this, we can see the total number of male children, male adults, female children, and female adults. Here we are focused on the adult populations. Looking at the adult column, we can see that there are a total of **1667** adult male passengers and a total of **425** adult female passengers.
 
@@ -102,7 +104,7 @@ From this, we can see the total number of male children, male adults, female chi
 
 To determine if the children had a better survival rate than the adults the following line of code was again run to compare survival rates in children versus adults:
 
-``` r
+``` {r}
 apply(Titanic, c(3, 4), sum)
 ```
 
@@ -110,7 +112,7 @@ From this output, we now need to calculate the survival rate for children (the n
 
 Survival Rate of Children:
 
-``` r
+``` {r}
 x <- 57
 y <- 52 + 57
 z <- x / y
@@ -120,7 +122,7 @@ z
 
 Survival Rate of Adults:
 
-``` r
+``` {r}
 x <- 57
 y <- 52 + 57
 z <- x / y
@@ -134,7 +136,7 @@ From this we can see that the survival rate of children was **52.3%** and the su
 
 To determine which class of passengers have a better survival rate, the following line of code was used to compare passenger class to survival rate:
 
-``` r
+``` {r}
 apply(Titanic, c(1, 4), sum)
 ```
 
@@ -142,7 +144,7 @@ From this output the survival rates for each passenger class can be easily calcu
 
 First Class Survival Rate:
 
-``` r
+``` {r}
 x <- 203
 y <- 122 + 203
 z <- x / y
@@ -152,7 +154,7 @@ z
 
 Second Class Survival Rate:
 
-``` r
+``` {r}
 x <- 118
 y <- 167 + 118
 z <- x / y
@@ -162,7 +164,7 @@ z
 
 Third Class Survival Rate:
 
-``` r
+``` {r}
 x <- 178
 y <- 528 + 178
 z <- x / y
@@ -172,7 +174,7 @@ z
 
 Crew Survival Rate:
 
-``` r
+``` {r}
 x <- 212
 y <- 673 + 212
 z <- x / y
@@ -195,7 +197,7 @@ ToothGrowth
 
 To read this file into a data frame, the following line of code was run:
 
-``` r
+``` {r}
 str(Toothgrowth)
 ```
 
@@ -210,7 +212,7 @@ To plot this data, I will use boxplots to compare the tooth length data for each
 
 The following code was run to generate this figure:
 
-``` r
+``` {r}
 qplot(supp,len,data=ToothGrowth, facets=~dose, main="The Influence of Exogenous Vitamin C Supplementation and \n Delivery Method on Guinea Pig Tooth Length",xlab="Dose Level (mg/day)", ylab="Numeric Tooth length") + geom_boxplot(aes(fill = supp))
 ```
 
