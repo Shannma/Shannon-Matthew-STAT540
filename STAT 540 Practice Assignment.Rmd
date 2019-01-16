@@ -48,13 +48,13 @@ data.frame(Titanic)
 ##### How many children and adults were on the Titanic?
 To determine the quantity of children and adults on board the Titanic, the following function was used to specifically show the survival rates of children and adults:
 
-```r
+```{r}
 apply(Titanic, c(3,4), sum)
 ```
 
 From this, the total number of children and adults on the Titanic is shown separated by those who survived and those who did not. In order to calculate the total number of children and the total number of adults, the number of children who survived must be added to the number of children who did not survive:
 
-```r
+```{r}
 x <- 52
 y <- 57
 z <- x + y
@@ -66,12 +66,11 @@ From this analysis, we can see that z = 109. *Therefore, there were a total of *
 
 To find the total number of adults, the same methods will be applied:
 
-```r
-x <- 1428
+```{r}
+x <- 1438
 y <- 654
 z <- x + y
 z
-## [1] 2092
 ```
 
 z = 2092. *Therefore, there were **2092 adults** on board the Titanic*.
@@ -79,9 +78,9 @@ z = 2092. *Therefore, there were **2092 adults** on board the Titanic*.
 ##### Were there more female adult or male adult passengers?
 To determine if there were more female adult or male adult passengers on the Titanic the following line of code was run:
 
-```r
- apply(Titanic, c(2,3), sum)
- ```
+```{r}
+apply(Titanic, c(2,3), sum)
+```
  
 From this, we can see the total number of male children, male adults, female children, and female adults. Here we are focused on the adult populations. Looking at the adult column, we can see that there are a total of **1667** adult male passengers and a total of **425** adult female passengers.
 
@@ -92,14 +91,14 @@ From this, we can see the total number of male children, male adults, female chi
 ##### Did the children have a better survival rate than the adults?
 To determine if the children had a better survival rate than the adults the following line of code was again run to compare survival rates in children versus adults:
 
-```r
+```{r}
 apply(Titanic, c(3, 4), sum)
 ```
 
 From this output, we now need to calculate the survival rate for children (the number of children that survived divided by the total number of children) and the survival rate for adults (the number of adults that survived divided by the total number of adults). This was done as follows:
 
 Survival Rate of Children:
-```r
+```{r}
 x <- 57
 y <- 52 + 57
 z <- x / y
@@ -108,12 +107,11 @@ z
 ```
 
 Survival Rate of Adults:
-```r
-x <- 57
-y <- 52 + 57
+```{r}
+x <- 654
+y <- 1438 + 654
 z <- x / y
 z
-## [1] 0.3126195
 ```
 
 From this we can see that the survival rate of children was **52.3%** and the survival rate of adults was **31.3%**. *Therefore, the children had a better survival rate than the adults*.
@@ -121,46 +119,42 @@ From this we can see that the survival rate of children was **52.3%** and the su
 ##### Which class of passengers have a better survival rate?
 To determine which class of passengers have a better survival rate, the following line of code was used to compare passenger class to survival rate:
 
-```r
+```{r}
 apply(Titanic, c(1, 4), sum)
 ```
 
 From this output the survival rates for each passenger class can be easily calculated:
 
 First Class Survival Rate:
-```r
+```{r}
 x <- 203
 y <- 122 + 203
 z <- x / y
 z
-## [1] 0.6246154
 ```
 
 Second Class Survival Rate:
-```r
+```{r}
 x <- 118
 y <- 167 + 118
 z <- x / y
 z
-## [1] 0.4140351
 ```
 
 Third Class Survival Rate:
-```r
+```{r}
 x <- 178
 y <- 528 + 178
 z <- x / y
 z
-## [1] 0.2521246
 ```
 
 Crew Survival Rate:
-```r
+```{r}
 x <- 212
 y <- 673 + 212
 z <- x / y
 z
-## [1] 0.239548
 ```
 
 From this we can see that the first class survival rate is **62.5%**, the second class survival rate is **41.4%**, the third class survival rate is **25.2%**, and the crew survival rate is **24.0%**.
@@ -168,6 +162,11 @@ From this we can see that the first class survival rate is **62.5%**, the second
 *Therefore, the first class passengers have a better survival rate compared to all other economic statuses (classes) on the Titanic*.
 
 # Part Three
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+```
 
 Now I will practice reading data from a text file and will practice graphing on R. To do this, I will use the ToothGrowth data frame available in R:
 
@@ -177,8 +176,8 @@ ToothGrowth
 
 To read this file into a data frame, the following line of code was run:
 
-```r
-str(Toothgrowth)
+```{r}
+str(ToothGrowth)
 ```
 
 From this output we can see that the ToothGrowth data frame contains **60** observations of **3** variables.
@@ -186,11 +185,17 @@ From this output we can see that the ToothGrowth data frame contains **60** obse
 ## Data Visualization
 Next I will create a figure of the ToothGrowth dataset. The ToothGrowth data set contains data that shows how Guinea Pig tooth growth (odontoblast length) responds to one of three dose levels of vitamin C(0.5, 1, and 2 mg/day) delivered through either orange juice (OJ) or ascorbic acid (VC).
 
-To plot this data, I will use boxplots to compare the tooth length data for each delivery method, grouped by the vitamin C dose level.
+To plot this data, I will use boxplots to compare the tooth length data for each delivery method, grouped by the vitamin C dose level. To do this, the 'tidyverse' package is required in R. This can be installed by running:
+
+```r
+install.packages("tidyverse", dependencies = TRUE)
+```
+
+After installing tidyverse, the following code was run to generate this figure:
 
 The following code was run to generate this figure:
 
-```r
+```{r}
 qplot(supp,len,data=ToothGrowth, facets=~dose, main="The Influence of Exogenous Vitamin C Supplementation and \n Delivery Method on Guinea Pig Tooth Length",xlab="Dose Level (mg/day)", ylab="Numeric Tooth length") + geom_boxplot(aes(fill = supp))
 ```
 

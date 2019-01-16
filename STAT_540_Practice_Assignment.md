@@ -58,17 +58,27 @@ data.frame(Titanic)
 
 To determine the quantity of children and adults on board the Titanic, the following function was used to specifically show the survival rates of children and adults:
 
-``` {r}
+``` r
 apply(Titanic, c(3,4), sum)
 ```
 
+    ##        Survived
+    ## Age       No Yes
+    ##   Child   52  57
+    ##   Adult 1438 654
+
 From this, the total number of children and adults on the Titanic is shown separated by those who survived and those who did not. In order to calculate the total number of children and the total number of adults, the number of children who survived must be added to the number of children who did not survive:
 
-``` {r}
+``` r
 x <- 52
 y <- 57
 z <- x + y
 z
+```
+
+    ## [1] 109
+
+``` r
 ## [1] 109
 ```
 
@@ -76,13 +86,14 @@ From this analysis, we can see that z = 109. *Therefore, there were a total of *
 
 To find the total number of adults, the same methods will be applied:
 
-``` {r}
-x <- 1428
+``` r
+x <- 1438
 y <- 654
 z <- x + y
 z
-## [1] 2092
 ```
+
+    ## [1] 2092
 
 z = 2092. *Therefore, there were **2092 adults** on board the Titanic*.
 
@@ -90,9 +101,14 @@ z = 2092. *Therefore, there were **2092 adults** on board the Titanic*.
 
 To determine if there were more female adult or male adult passengers on the Titanic the following line of code was run:
 
-``` {r}  
+``` r
 apply(Titanic, c(2,3), sum)
 ```
+
+    ##         Age
+    ## Sex      Child Adult
+    ##   Male      64  1667
+    ##   Female    45   425
 
 From this, we can see the total number of male children, male adults, female children, and female adults. Here we are focused on the adult populations. Looking at the adult column, we can see that there are a total of **1667** adult male passengers and a total of **425** adult female passengers.
 
@@ -104,31 +120,42 @@ From this, we can see the total number of male children, male adults, female chi
 
 To determine if the children had a better survival rate than the adults the following line of code was again run to compare survival rates in children versus adults:
 
-``` {r}
+``` r
 apply(Titanic, c(3, 4), sum)
 ```
+
+    ##        Survived
+    ## Age       No Yes
+    ##   Child   52  57
+    ##   Adult 1438 654
 
 From this output, we now need to calculate the survival rate for children (the number of children that survived divided by the total number of children) and the survival rate for adults (the number of adults that survived divided by the total number of adults). This was done as follows:
 
 Survival Rate of Children:
 
-``` {r}
+``` r
 x <- 57
 y <- 52 + 57
 z <- x / y
 z
+```
+
+    ## [1] 0.5229358
+
+``` r
 ## [1] 0.5229358
 ```
 
 Survival Rate of Adults:
 
-``` {r}
-x <- 57
-y <- 52 + 57
+``` r
+x <- 654
+y <- 1438 + 654
 z <- x / y
 z
-## [1] 0.3126195
 ```
+
+    ## [1] 0.3126195
 
 From this we can see that the survival rate of children was **52.3%** and the survival rate of adults was **31.3%**. *Therefore, the children had a better survival rate than the adults*.
 
@@ -136,51 +163,62 @@ From this we can see that the survival rate of children was **52.3%** and the su
 
 To determine which class of passengers have a better survival rate, the following line of code was used to compare passenger class to survival rate:
 
-``` {r}
+``` r
 apply(Titanic, c(1, 4), sum)
 ```
+
+    ##       Survived
+    ## Class   No Yes
+    ##   1st  122 203
+    ##   2nd  167 118
+    ##   3rd  528 178
+    ##   Crew 673 212
 
 From this output the survival rates for each passenger class can be easily calculated:
 
 First Class Survival Rate:
 
-``` {r}
+``` r
 x <- 203
 y <- 122 + 203
 z <- x / y
 z
-## [1] 0.6246154
 ```
+
+    ## [1] 0.6246154
 
 Second Class Survival Rate:
 
-``` {r}
+``` r
 x <- 118
 y <- 167 + 118
 z <- x / y
 z
-## [1] 0.4140351
 ```
+
+    ## [1] 0.4140351
 
 Third Class Survival Rate:
 
-``` {r}
+``` r
 x <- 178
 y <- 528 + 178
 z <- x / y
 z
-## [1] 0.2521246
 ```
+
+    ## [1] 0.2521246
 
 Crew Survival Rate:
 
-``` {r}
+``` r
 x <- 212
 y <- 673 + 212
 z <- x / y
 z
-## [1] 0.239548
 ```
+
+    ## [1] 0.239548
 
 From this we can see that the first class survival rate is **62.5%**, the second class survival rate is **41.4%**, the third class survival rate is **25.2%**, and the crew survival rate is **24.0%**.
 
@@ -188,6 +226,25 @@ From this we can see that the first class survival rate is **62.5%**, the second
 
 Part Three
 ==========
+
+``` r
+library(tidyverse)
+```
+
+    ## ── Attaching packages ─────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+
+    ## ✔ ggplot2 3.1.0     ✔ purrr   0.2.5
+    ## ✔ tibble  2.0.1     ✔ dplyr   0.7.8
+    ## ✔ tidyr   0.8.2     ✔ stringr 1.3.1
+    ## ✔ readr   1.3.1     ✔ forcats 0.3.0
+
+    ## ── Conflicts ────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ✖ dplyr::filter() masks stats::filter()
+    ## ✖ dplyr::lag()    masks stats::lag()
+
+``` r
+library(ggplot2)
+```
 
 Now I will practice reading data from a text file and will practice graphing on R. To do this, I will use the ToothGrowth data frame available in R:
 
@@ -197,9 +254,14 @@ ToothGrowth
 
 To read this file into a data frame, the following line of code was run:
 
-``` {r}
-str(Toothgrowth)
+``` r
+str(ToothGrowth)
 ```
+
+    ## 'data.frame':    60 obs. of  3 variables:
+    ##  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
+    ##  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
+    ##  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
 
 From this output we can see that the ToothGrowth data frame contains **60** observations of **3** variables.
 
@@ -208,13 +270,21 @@ Data Visualization
 
 Next I will create a figure of the ToothGrowth dataset. The ToothGrowth data set contains data that shows how Guinea Pig tooth growth (odontoblast length) responds to one of three dose levels of vitamin C(0.5, 1, and 2 mg/day) delivered through either orange juice (OJ) or ascorbic acid (VC).
 
-To plot this data, I will use boxplots to compare the tooth length data for each delivery method, grouped by the vitamin C dose level.
+To plot this data, I will use boxplots to compare the tooth length data for each delivery method, grouped by the vitamin C dose level. To do this, the 'tidyverse' package is required in R. This can be installed by running:
+
+``` r
+install.packages("tidyverse", dependencies = TRUE)
+```
+
+After installing tidyverse, the following code was run to generate this figure:
 
 The following code was run to generate this figure:
 
-``` {r}
+``` r
 qplot(supp,len,data=ToothGrowth, facets=~dose, main="The Influence of Exogenous Vitamin C Supplementation and \n Delivery Method on Guinea Pig Tooth Length",xlab="Dose Level (mg/day)", ylab="Numeric Tooth length") + geom_boxplot(aes(fill = supp))
 ```
+
+![](STAT_540_Practice_Assignment_files/figure-markdown_github/unnamed-chunk-15-1.png)
 
 This graph is informative as it allows us to better visualize trends within the data set. As a result, this graph is clearly able to demonstrate that the administered dose of vitamin C is positively correlated with tooth length. As well, this graph is able to demonstrate that there is no difference between delivery method at the high dose of 2.0 mg/day, however it appears that orange juice confers a greater advantage on tooth growth at the lower doses of 0.5 and 1.0 mg/day. Statistical analysis is required to determine if this is a significant difference, however.
 
