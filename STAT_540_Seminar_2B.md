@@ -59,7 +59,7 @@ ggplot(data = mpg) +
 
 ![](STAT_540_Seminar_2B_files/figure-markdown_github/unnamed-chunk-3-1.png)
 
-Finally, to complete the deliverable for this seminar, the above graph was modified to add colour, and appear identical to the provided visual that needed to be replicated.
+Finally, to complete the deliverable for this seminar, the above graph was modified to add colour and appear identical to the provided visual that needed to be replicated.
 
 ``` r
 ggplot(data = mpg) + 
