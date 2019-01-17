@@ -45,7 +45,7 @@ data.frame(Titanic)
 
 ### 2.1 Passenger Breakdown
 
-##### How many children and adults were on the Titanic?
+#### How many children and adults were on the Titanic?
 To determine the quantity of children and adults on board the Titanic, the following function was used to specifically show the survival rates of children and adults:
 
 ```{r}
@@ -74,7 +74,7 @@ z
 
 z = 2092. *Therefore, there were **2092 adults** on board the Titanic*.
 
-##### Were there more female adult or male adult passengers?
+#### Were there more female adult or male adult passengers?
 To determine if there were more female adult or male adult passengers on the Titanic the following line of code was run:
 
 ```{r}
@@ -87,7 +87,7 @@ From this, we can see the total number of male children, male adults, female chi
 
 ### 2.2 Survival
 
-##### Did the children have a better survival rate than the adults?
+#### Did the children have a better survival rate than the adults?
 To determine if the children had a better survival rate than the adults the following line of code was again run to compare survival rates in children versus adults:
 
 ```{r}
@@ -114,7 +114,7 @@ z
 
 From this we can see that the survival rate of children was **52.3%** and the survival rate of adults was **31.3%**. *Therefore, the children had a better survival rate than the adults*.
 
-##### Which class of passengers have a better survival rate?
+#### Which class of passengers have a better survival rate?
 To determine which class of passengers have a better survival rate, the following line of code was used to compare passenger class to survival rate:
 
 ```{r}
