@@ -243,7 +243,7 @@ From this output, we can see that the 'guinea\_pigs\_tooth\_growth.txt' text fil
 Data Visualization
 ------------------
 
-Next, I will create a figure of the ToothGrowth data frame. The ToothGrowth data frame shows how Guinea Pig tooth growth (odontoblast length) responds to one of three dose levels of vitamin C (0.5, 1, and 2 mg/day) delivered through either orange juice (OJ) or ascorbic acid (VC). The delivery method variable is named "supp" in this data frame.
+Next, I will create a figure of the ToothGrowth data frame. The ToothGrowth data frame shows how Guinea Pig tooth growth (odontoblast length) responds to one of three dose levels of vitamin C (0.5, 1, and 2 mg/day) delivered through either orange juice (OJ) or ascorbic acid (VC). The delivery method variable is named "supp", the dose level variable is named "dose", and the tooth length variable is named "len" in this data frame.
 
 To plot this data, I will use boxplots to compare the tooth length data for each delivery method, grouped by the vitamin C dose level.
 
