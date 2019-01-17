@@ -18,19 +18,19 @@ For more information about myself, I can also be found on [LinkedIn](https://www
 Course Aspirations:
 -------------------
 
-Upon completion of STAT 540, it is my goal to \[1\] have a clearer understanding for the process of analyzing high dimensional biology data and \[2\] develop a strong familiarity with R statistical computing methods. A large portion of my research involves the use of RNA-seq methodology and analysis in R. As these methods are new to me, it is my hope that this course will help develop my understanding, streamline my data analysis, and contribute greater efficiency while completing my degree. Finally, it is my hope that this course further enhances my professional development as an aspiring biomedical researcher and enhances my analytic skills, allowing me to publish quality work in an efficient manner.
+Upon completion of STAT 540, it is my goal to \[1\] have a clearer understanding for the process of analyzing high dimensional biology data and \[2\] develop a strong familiarity with R statistical computing methods. A large portion of my research involves the use of RNA-seq methodology and analysis in R. As these methods are new to me, it is my hope that this course will help develop my understanding, streamline my data analysis, and contribute greater efficiency while completing my thesis. Finally, it is my hope that this course further enhances my professional development as an aspiring biomedical researcher as well as enhance my analytic skills. This will allow me to publish quality work in an efficient manner.
 
 Repository Purpose:
 -------------------
 
-The purpose of this repository is to store all of my work completed for the STAT 540 class. This repository will serve as a critical aspect to my successful completion of this course and will provide a unified hub within which my homework assignments and seminar work can be stored and viewed on GitHub and within R.
+The purpose of this repository is to store all of my work completed for the STAT 540 class. This repository will serve as a critical aspect to my successful completion of this course and will provide a unified hub within which my homework assignments and seminar work can be stored and viewed on both GitHub and within R.
 
 As well, this repository will serve as an initial introduction to 'R Markdown' and the benefits included in the use of this data storage format. Hopefully this repository will provide me with a working understanding for the functionalities of R and GitHub that can be applied to my own research moving beyond this course.
 
 Additional Information:
 -----------------------
 
-Finally, in addition to the academic tangeables presented in this course, I am hoping to extend my social network through participation in the seminars and throguh lecture attendance. As a new individual in Vancouver and as a member of a small program (there are only 5 students enrolled in my year) I am excited to meet new individuals from diverse academic backgrounds.
+Finally, in addition to the academic tangeables presented in this course, I am hoping to extend my social network through participation in the seminars and throguh lecture attendance. As a new individual in Vancouver and as a member of a small program (there are only 5 students in my cohort) I am excited to meet new individuals from diverse academic backgrounds.
 
 Part Two
 ========
@@ -67,7 +67,7 @@ apply(Titanic, c(3,4), sum)
     ##   Child   52  57
     ##   Adult 1438 654
 
-From this, the total number of children and adults on the Titanic is shown separated by those who survived and those who did not. In order to calculate the total number of children and the total number of adults, the number of children who survived must be added to the number of children who did not survive:
+From this, the total number of children and adults on the Titanic is shown, separated by those who survived and those who did not. In order to calculate the total number of children, the number of children who survived must be added to the number of children who did not survive:
 
 ``` r
 x <- 52
@@ -77,10 +77,6 @@ z
 ```
 
     ## [1] 109
-
-``` r
-## [1] 109
-```
 
 From this analysis, we can see that z = 109. *Therefore, there were a total of **109 children** on board the Titanic*.
 
@@ -141,10 +137,6 @@ z
 ```
 
     ## [1] 0.5229358
-
-``` r
-## [1] 0.5229358
-```
 
 Survival Rate of Adults:
 
@@ -227,32 +219,15 @@ From this we can see that the first class survival rate is **62.5%**, the second
 Part Three
 ==========
 
-``` r
-library(tidyverse)
-```
-
-    ## ── Attaching packages ─────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
-
-    ## ✔ ggplot2 3.1.0     ✔ purrr   0.2.5
-    ## ✔ tibble  2.0.1     ✔ dplyr   0.7.8
-    ## ✔ tidyr   0.8.2     ✔ stringr 1.3.1
-    ## ✔ readr   1.3.1     ✔ forcats 0.3.0
-
-    ## ── Conflicts ────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-    ## ✖ dplyr::filter() masks stats::filter()
-    ## ✖ dplyr::lag()    masks stats::lag()
-
-``` r
-library(ggplot2)
-```
-
-Now I will practice reading data from a text file and will practice graphing on R. To do this, I will use the ToothGrowth data frame available in R:
-
-``` r
-ToothGrowth
-```
+Now, I will practice reading data from a text file and will practice graphing on R. To do this, I will use the 'guinea\_pigs\_tooth\_growth.txt' text file. This file is identical to the 'ToothGrowth' data file available in R.
 
 To read this file into a data frame, the following line of code was run:
+
+``` r
+ToothGrowth <- read.table("guinea_pigs_tooth_growth.txt", header = TRUE)
+```
+
+As well, using the following function the structure of the data set was displayed. This provided further information about the text file before graphing:
 
 ``` r
 str(ToothGrowth)
@@ -263,20 +238,14 @@ str(ToothGrowth)
     ##  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
     ##  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
 
-From this output we can see that the ToothGrowth data frame contains **60** observations of **3** variables.
+From this output, we can see that the 'guinea\_pigs\_tooth\_growth.txt' text file contains **60** observations of **3** variables.
 
 Data Visualization
 ------------------
 
-Next I will create a figure of the ToothGrowth dataset. The ToothGrowth data set contains data that shows how Guinea Pig tooth growth (odontoblast length) responds to one of three dose levels of vitamin C(0.5, 1, and 2 mg/day) delivered through either orange juice (OJ) or ascorbic acid (VC).
+Next, I will create a figure of the ToothGrowth data frame. The ToothGrowth data frame shows how Guinea Pig tooth growth (odontoblast length) responds to one of three dose levels of vitamin C (0.5, 1, and 2 mg/day) delivered through either orange juice (OJ) or ascorbic acid (VC).
 
-To plot this data, I will use boxplots to compare the tooth length data for each delivery method, grouped by the vitamin C dose level. To do this, the 'tidyverse' package is required in R. This can be installed by running:
-
-``` r
-install.packages("tidyverse", dependencies = TRUE)
-```
-
-After installing tidyverse, the following code was run to generate this figure:
+To plot this data, I will use boxplots to compare the tooth length data for each delivery method, grouped by the vitamin C dose level.
 
 The following code was run to generate this figure:
 
@@ -284,8 +253,12 @@ The following code was run to generate this figure:
 qplot(supp,len,data=ToothGrowth, facets=~dose, main="The Influence of Exogenous Vitamin C Supplementation and \n Delivery Method on Guinea Pig Tooth Length",xlab="Dose Level (mg/day)", ylab="Numeric Tooth length") + geom_boxplot(aes(fill = supp))
 ```
 
-![](STAT_540_Practice_Assignment_files/figure-markdown_github/unnamed-chunk-15-1.png)
+![](STAT_540_Practice_Assignment_files/figure-markdown_github/unnamed-chunk-16-1.png)
 
-This graph is informative as it allows us to better visualize trends within the data set. As a result, this graph is clearly able to demonstrate that the administered dose of vitamin C is positively correlated with tooth length. As well, this graph is able to demonstrate that there is no difference between delivery method at the high dose of 2.0 mg/day, however it appears that orange juice confers a greater advantage on tooth growth at the lower doses of 0.5 and 1.0 mg/day. Statistical analysis is required to determine if this is a significant difference, however.
+### How my Graph is Informative:
 
-Finally, I chose to represent the data set in this method as it allows for a clear comparison of the effect of delivery method on tooth length at each dose level. Ultimately, this allows for comparison between the two methods for vitamin C delivery within each dose level as well as a comparison between the delivery across all dose levels. From this we can observe the overall dose response for each delivery method as well as compare the two methods within each dose, allowing for easier comprehension of the experiments results. Boxplots were chosen in this graph to visualize the spread of data in each condition, allowing for a more impactful and complete interpretation of the data. In contrast, a simple line graph would not have been able to show all of this information.
+This graph is informative as it allows for better visualization of trends within the data frame. As a result, this graph is clearly able to demonstrate that the dose of vitamin C delivered is positively correlated with tooth length. As well, this graph is able to demonstrate that there is no observable difference between delivery method at the high dose of 2.0 mg/day while orange juice appears to confer a greater advantage on tooth growth at the lower doses of 0.5 and 1.0 mg/day. Statistical analysis is required to determine if thesse observations are significant, however.
+
+### Why I Chose to Present the Data This Way:
+
+Finally, I chose to represent the data frame this way as the graph provides a clear comparison of the effect of delivery method on tooth length at each dose level. Ultimately, this allows for comparison between the two methods for vitamin C delivery within each dose level, as well as comparison between the delivery methods across all dose levels. From this we can observe the dose response for each delivery method on tooth growth as well as compare the impact of OJ and VC delivery on tooth growth within each dose level. This allows for easier comprehension of the results of the experiment. Boxplots were chosen in this graph to visualize the spread of data in each condition. This allows for a more impactful and complete interpretation of the data. In contrast, a simple line graph would not have been able to show all of this information.
