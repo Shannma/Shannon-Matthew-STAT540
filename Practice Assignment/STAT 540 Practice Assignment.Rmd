@@ -161,10 +161,12 @@ From this we can see that the first class survival rate is **62.5%**, the second
 
 # Part Three
 
-```{r, include=FALSE}
+```{r}
 library(tidyverse)
 library(ggplot2)
+# These packages must being loaded into R to run the following code
 ```
+
 
 Now, I will practice reading data from a text file and will practice graphing on R. To do this, I will use the 'guinea_pigs_tooth_growth.txt' text file. This file is identical to the 'ToothGrowth' data file available in R.
 

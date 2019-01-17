@@ -219,6 +219,26 @@ From this we can see that the first class survival rate is **62.5%**, the second
 Part Three
 ==========
 
+``` r
+library(tidyverse)
+```
+
+    ## ── Attaching packages ────────────────────────────────────────────────── tidyverse 1.2.1 ──
+
+    ## ✔ ggplot2 3.1.0     ✔ purrr   0.2.5
+    ## ✔ tibble  2.0.1     ✔ dplyr   0.7.8
+    ## ✔ tidyr   0.8.2     ✔ stringr 1.3.1
+    ## ✔ readr   1.3.1     ✔ forcats 0.3.0
+
+    ## ── Conflicts ───────────────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ✖ dplyr::filter() masks stats::filter()
+    ## ✖ dplyr::lag()    masks stats::lag()
+
+``` r
+library(ggplot2)
+# These packages must being loaded into R to run the following code
+```
+
 Now, I will practice reading data from a text file and will practice graphing on R. To do this, I will use the 'guinea\_pigs\_tooth\_growth.txt' text file. This file is identical to the 'ToothGrowth' data file available in R.
 
 To read this file into a data frame, the following line of code was run:
