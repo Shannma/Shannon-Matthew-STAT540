@@ -227,7 +227,7 @@ To read this file into a data frame, the following line of code was run:
 ToothGrowth <- read.table("guinea_pigs_tooth_growth.txt", header = TRUE)
 ```
 
-As well, using the following function the structure of the data set was displayed. This provided further information about the text file before graphing:
+As well, using the following function, the structure of the data set was displayed. This provided further information about the text file before graphing:
 
 ``` r
 str(ToothGrowth)
@@ -243,7 +243,7 @@ From this output, we can see that the 'guinea\_pigs\_tooth\_growth.txt' text fil
 Data Visualization
 ------------------
 
-Next, I will create a figure of the ToothGrowth data frame. The ToothGrowth data frame shows how Guinea Pig tooth growth (odontoblast length) responds to one of three dose levels of vitamin C (0.5, 1, and 2 mg/day) delivered through either orange juice (OJ) or ascorbic acid (VC).
+Next, I will create a figure of the ToothGrowth data frame. The ToothGrowth data frame shows how Guinea Pig tooth growth (odontoblast length) responds to one of three dose levels of vitamin C (0.5, 1, and 2 mg/day) delivered through either orange juice (OJ) or ascorbic acid (VC). The delivery method variable is named "supp" in this data frame.
 
 To plot this data, I will use boxplots to compare the tooth length data for each delivery method, grouped by the vitamin C dose level.
 
@@ -257,7 +257,7 @@ qplot(supp,len,data=ToothGrowth, facets=~dose, main="The Influence of Exogenous 
 
 ### How my Graph is Informative:
 
-This graph is informative as it allows for better visualization of trends within the data frame. As a result, this graph is clearly able to demonstrate that the dose of vitamin C delivered is positively correlated with tooth length. As well, this graph is able to demonstrate that there is no observable difference between delivery method at the high dose of 2.0 mg/day while orange juice appears to confer a greater advantage on tooth growth at the lower doses of 0.5 and 1.0 mg/day. Statistical analysis is required to determine if thesse observations are significant, however.
+This graph is informative as it allows for better visualization of trends within the data frame. As a result, this graph is clearly able to demonstrate that the dose of vitamin C delivered is positively correlated with tooth length. As well, this graph is able to demonstrate that there is no observable difference between delivery method at the high dose of 2.0 mg/day while orange juice appears to confer a greater advantage on tooth growth at the lower doses of 0.5 and 1.0 mg/day. Statistical analysis is required to determine if these observations are significant, however.
 
 ### Why I Chose to Present the Data This Way:
 
