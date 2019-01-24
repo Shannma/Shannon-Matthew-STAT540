@@ -18,19 +18,19 @@ For more information about myself, I can also be found on [LinkedIn](https://www
 Course Aspirations:
 -------------------
 
-Upon completion of STAT 540, it is my goal to \[1\] have a clearer understanding for the process of analyzing high dimensional biology data and \[2\] develop a strong familiarity with R statistical computing methods. A large portion of my research involves the use of RNA-seq methodology and analysis in R. As these methods are new to me, it is my hope that this course will help develop my understanding, streamline my data analysis, and contribute greater efficiency while completing my thesis. Finally, it is my hope that this course further enhances my professional development as an aspiring biomedical researcher as well as enhance my analytic skills. This will allow me to publish quality work in an efficient manner.
+Upon completion of STAT 540, it is my goal to \[1\] have a clearer understanding for the process of analyzing high dimensional biology data and \[2\] develop a strong familiarity with R statistical computing methods. A large portion of my research involves the use of RNA-seq methodology and analysis in R. As these methods are new to me, it is my hope that this course will help develop my understanding, streamline my data analysis, and contribute greater efficiency while completing my thesis. Finally, it is my hope that this course further enhances my professional development as an aspiring biomedical researcher and enhances my analytic skills. This will allow me to publish quality work in an efficient manner.
 
 Repository Purpose:
 -------------------
 
-The purpose of this repository is to store all of my work completed for the STAT 540 class. This repository will serve as a critical aspect to my successful completion of this course and will provide a unified hub within which my homework assignments and seminar work can be stored and viewed on both GitHub and within R.
+The purpose of this repository is to store all of my work completed for the STAT 540 class. This repository will be critical to my successful completion of this course and will provide a unified hub within which my homework assignments and seminar work can be stored/viewed on both GitHub and within R.
 
 As well, this repository will serve as an initial introduction to 'R Markdown' and the benefits included in the use of this data storage format. Hopefully this repository will provide me with a working understanding for the functionalities of R and GitHub that can be applied to my own research moving beyond this course.
 
 Additional Information:
 -----------------------
 
-Finally, in addition to the academic tangeables presented in this course, I am hoping to extend my social network through participation in the seminars and throguh lecture attendance. As a new individual in Vancouver and as a member of a small program (there are only 5 students in my cohort) I am excited to meet new individuals from diverse academic backgrounds.
+Finally, in addition to the academic tangeables presented in this course, I am hoping to extend my social network through participation in the seminars and through lecture attendance. As a new citizen of Vancouver and as a member of a small program (there are only 5 students in my cohort) I am excited to meet new individuals from diverse academic backgrounds.
 
 Part Two
 ========
@@ -54,7 +54,7 @@ data.frame(Titanic)
 
 ### 2.1 Passenger Breakdown
 
-##### How many children and adults were on the Titanic?
+#### How many children and adults were on the Titanic?
 
 To determine the quantity of children and adults on board the Titanic, the following function was used to specifically show the survival rates of children and adults:
 
@@ -93,7 +93,7 @@ z
 
 z = 2092. *Therefore, there were **2092 adults** on board the Titanic*.
 
-##### Were there more female adult or male adult passengers?
+#### Were there more female adult or male adult passengers?
 
 To determine if there were more female adult or male adult passengers on the Titanic the following line of code was run:
 
@@ -112,7 +112,7 @@ From this, we can see the total number of male children, male adults, female chi
 
 ### 2.2 Survival
 
-##### Did the children have a better survival rate than the adults?
+#### Did the children have a better survival rate than the adults?
 
 To determine if the children had a better survival rate than the adults the following line of code was again run to compare survival rates in children versus adults:
 
@@ -151,7 +151,7 @@ z
 
 From this we can see that the survival rate of children was **52.3%** and the survival rate of adults was **31.3%**. *Therefore, the children had a better survival rate than the adults*.
 
-##### Which class of passengers have a better survival rate?
+#### Which class of passengers have a better survival rate?
 
 To determine which class of passengers have a better survival rate, the following line of code was used to compare passenger class to survival rate:
 
@@ -219,6 +219,26 @@ From this we can see that the first class survival rate is **62.5%**, the second
 Part Three
 ==========
 
+``` r
+library(tidyverse)
+```
+
+    ## ── Attaching packages ────────────────────────────────────────────────── tidyverse 1.2.1 ──
+
+    ## ✔ ggplot2 3.1.0     ✔ purrr   0.2.5
+    ## ✔ tibble  2.0.1     ✔ dplyr   0.7.8
+    ## ✔ tidyr   0.8.2     ✔ stringr 1.3.1
+    ## ✔ readr   1.3.1     ✔ forcats 0.3.0
+
+    ## ── Conflicts ───────────────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ✖ dplyr::filter() masks stats::filter()
+    ## ✖ dplyr::lag()    masks stats::lag()
+
+``` r
+library(ggplot2)
+# These packages must being loaded into R to run the following code
+```
+
 Now, I will practice reading data from a text file and will practice graphing on R. To do this, I will use the 'guinea\_pigs\_tooth\_growth.txt' text file. This file is identical to the 'ToothGrowth' data file available in R.
 
 To read this file into a data frame, the following line of code was run:
@@ -243,7 +263,11 @@ From this output, we can see that the 'guinea\_pigs\_tooth\_growth.txt' text fil
 Data Visualization
 ------------------
 
+<<<<<<< HEAD
 Next, I will create a figure of the ToothGrowth data frame. The ToothGrowth data frame shows how Guinea Pig tooth growth (odontoblast length) responds to one of three dose levels of vitamin C (0.5, 1, and 2 mg/day) delivered through either orange juice (OJ) or ascorbic acid (VC). The delivery method variable is named "supp" in this data frame.
+=======
+Next, I will create a figure of the ToothGrowth data frame. The ToothGrowth data frame shows how Guinea Pig tooth growth (odontoblast length) responds to one of three dose levels of vitamin C (0.5, 1, and 2 mg/day) delivered through either orange juice (OJ) or ascorbic acid (VC). The delivery method variable is named "supp", the dose level variable is named "dose", and the tooth length variable is named "len" in this data frame.
+>>>>>>> 4e541916d1f78908236c0b8b4b1807429c740bb3
 
 To plot this data, I will use boxplots to compare the tooth length data for each delivery method, grouped by the vitamin C dose level.
 
