@@ -9,7 +9,7 @@ This study sought to understand the gene expression of mouse Hair Cells (HCs) du
 
 RNA-seq findings were reproduced in a second mouse strain expressing the fluorescent tdTomatoe protein under the control of the *Gfi1* promoter, and validated using quantitative real-time polymerase chain reaction to confirm differential gene expression, as well as using *in situ* immunohistochemistry and immunocytochemistry analyses. 
 
-From this data, Scheffer et al. concluded that genes preferentially expressed in HCs are good candidates for unknown deafness genes. This conclusion is supported by the identification of new deafness genes by researchers using their published data.
+From this data, Scheffer et al. concluded that genes preferentially expressed in HCs are good candidates for unknown deafness genes. This conclusion is supported by the previous identification of new deafness genes by researchers using their published data in the SHIELD database, such as the identification of the Usher syndrome gene *CIB2* by Riazuddin et al., in 2012.
 
 ## Datasets:
 Raw data from this study are available on the National Centre for Biotechnology Information (NCBI) Gene Expression Omnibus (GEO) database repository under the accession number: [GSE60019](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60019). In addition,to make their data publically available, Scheffer et al. created the Shared Inner Ear Laboratory Database ([SHIELD](https://shield.hms.harvard.edu)) database which presents gene expression data integrated with compregensive annotation.
