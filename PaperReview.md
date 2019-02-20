@@ -17,6 +17,8 @@ Raw data from this study are available on the National Centre for Biotechnology 
 In this study, mRNA was collected from HC and SC cells of the cochlear and utricle (vestibluar) tissue of male and female mice at four developmental time points: E16, P0, P4, and P7. mRNA was then amplified and converted into a nondirectional Illumina sequencing library for single-end sequencing of 3' tagged 35/50bp reads via Illumina HiSeq methods to create the dataset. A comprehensive, cell-type specific RNA-seq analysis was done on the 16 samples using a matrix designed of three factors: [1] *cell type*, [2] *tissue source*, and [3] *developmental stage*. In this study biological duplicates were not used, rather, samples of different levels in other factors were combined and treated as replicates for statistical analysis.
 
 ## Analyses used in this Study:
-1. Cell populations were collected from dissociations of cochlear and utricle tissue samples and sorted using a BD FACS Aria II cell sorter by GFP expression level (High expression; GFP<sup>+</sup> = HC, low expression; GFP<sup>-</sup> = SC).
+1. Cell populations were collected from dissociations of cochlear and utricle tissue samples and sorted using a BD FACS Aria II cell sorter by GFP expression level (High expression; GFP<sup>+</sup> = HC, low expression; GFP<sup>-</sup> = SC). Purity of these populations was later assesed by gene expression analysis and both populations were deemed at leased 99% pure.
+
+2. 
 
 ## Paper Review:
