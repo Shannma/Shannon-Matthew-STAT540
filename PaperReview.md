@@ -10,6 +10,8 @@ This study sought to understand the gene expression of mouse Hair Cells (HCs) du
 ## Datasets:
 Raw data from this study is available on the National Centre for Biotechnology Information (NCBI) Gene Expression Omnibus (GEO) database repository under the accession number: [GSE60019](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60019). In addition,to make their data publically available, Scheffer et al. created the Shared Inner Ear Laboratory Database ([SHIELD](https://shield.hms.harvard.edu)) database which presents gene expression data integrated with compregensive annotation.
 
+
+
 ## Analyses:
 
 
