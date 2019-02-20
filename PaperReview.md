@@ -14,9 +14,9 @@ From this data, Scheffer et al. concluded that genes preferentially expressed in
 ## Datasets used in this Study:
 Raw data from this study are available on the National Centre for Biotechnology Information (NCBI) Gene Expression Omnibus (GEO) database repository under the accession number: [GSE60019](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE60019). In addition,to make their data publically available, Scheffer et al. created the Shared Inner Ear Laboratory Database ([SHIELD](https://shield.hms.harvard.edu)) database which presents gene expression data integrated with compregensive annotation.
 
-In this study, mRNA was collected from HC and SC cells of the cochlear and utricle (vestibluar) tissue of male and female mice at four developmental time points: E16, P0, P4, and P7. mRNA was then amplified and converted into a nondirectional Illumina sequencing library for single-end sequencing of 3' tagged 35/50bp reads via Illumina HiSeq methods. A comprehensive, cell-type specific RNA-seq analysis was done on the 16 samples using a matrix designed of three factors: [1] *cell type*, [2] *tissue source*, and [3] *developmental stage*. In this study biological duplicates were not used, rather, samples of different levels in other factors were combined and treated as replicates for statistical analysis.
+In this study, mRNA was collected from HC and SC cells of the cochlear and utricle (vestibluar) tissue of male and female mice at four developmental time points: E16, P0, P4, and P7. mRNA was then amplified and converted into a nondirectional Illumina sequencing library for single-end sequencing of 3' tagged 35/50bp reads via Illumina HiSeq methods to create the dataset. A comprehensive, cell-type specific RNA-seq analysis was done on the 16 samples using a matrix designed of three factors: [1] *cell type*, [2] *tissue source*, and [3] *developmental stage*. In this study biological duplicates were not used, rather, samples of different levels in other factors were combined and treated as replicates for statistical analysis.
 
 ## Analyses used in this Study:
-
+1. Cell populations were collected from dissociations of cochlear and utricle tissue samples and sorted using a BD FACS Aria II cell sorter by GFP expression level (High expression; GFP<sup>+</sup> = HC, low expression; GFP<sup>-</sup> = SC).
 
 ## Paper Review:
